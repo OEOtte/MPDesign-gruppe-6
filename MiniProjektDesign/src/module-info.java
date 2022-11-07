@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author olive
- *
- */
-module MiniProjektDesign {
-}

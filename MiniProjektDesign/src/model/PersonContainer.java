@@ -22,4 +22,8 @@ public class PersonContainer {
 	public ArrayList<Person> getCurrentPeople() {
 		return people;
 	}
+	public Person findByPhone(int phone) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

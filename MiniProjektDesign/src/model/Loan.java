@@ -6,6 +6,9 @@ public class Loan {
 	private String period;
 	private boolean state;
 	private String returnDate;
+	private Person person;
+	private Copy copy;
+	
 	public Loan(int loanNumber, String borrowDate, String period, boolean state, String returnDate) {
 		this.setLoanNumber(loanNumber);
 		this.setBorrowDate(borrowDate);
@@ -42,6 +45,18 @@ public class Loan {
 	}
 	public void setReturnDate(String returnDate) {
 		this.returnDate = returnDate;
+	}
+	public Person getPerson() {
+		return person;
+	}
+	public void setPerson(Person person) {
+		this.person = person;
+	}
+	public Copy getCopy() {
+		return copy;
+	}
+	public void setCopy(Copy copy) {
+		this.copy = copy;
 	}
 	
 }

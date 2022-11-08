@@ -43,5 +43,4 @@ public class Person {
 	public void setPhone(int phone) {
 		this.phone = phone;
 	}
-	
 }

@@ -15,6 +15,8 @@ public class Loan {
 		this.setPeriod(period);
 		this.setState(state);
 		this.setReturnDate(returnDate);
+		person = null;
+		copy = null;
 	}
 	public int getLoanNumber() {
 		return loanNumber;

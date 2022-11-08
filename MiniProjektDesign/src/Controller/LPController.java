@@ -7,7 +7,7 @@ public class LPController {
 
 	public Copy findCopy(int serialNumber) {
 		return null;
-		// TODO Auto-generated method stub
+		// TODO tilføj logic til at finde copy
 		
 	}
 

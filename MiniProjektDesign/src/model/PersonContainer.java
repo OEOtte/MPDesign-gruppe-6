@@ -22,8 +22,22 @@ public class PersonContainer {
 	public ArrayList<Person> getCurrentPeople() {
 		return people;
 	}
+	
+	/** 
+	 * @param Find person using phone
+	 * Here we search through every person in our list
+	 * to find a person with a phone matching our phone input
+	 * @return
+	 */
 	public Person findByPhone(int phone) {
-		// TODO Auto-generated method stub
-		return null;
+		Person res = null;
+		boolean found = false;
+		for (int i = 0; i < people.size() && !found; i++) {
+			if (people.get(i).getPhone() == phone) {
+				res = people.get(i);
+				found = true;
+			}
+		}
+		return res;
 	}
 }

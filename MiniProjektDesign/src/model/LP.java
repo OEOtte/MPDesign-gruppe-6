@@ -5,6 +5,7 @@ public class LP {
 	private String title;
 	private String artist;
 	private String publicationDate;
+	// Add array/container for hver copy der findes
 	public LP(int barcode, String title, String artist, String publicationDate) {
 		this.setBarcode(barcode);
 		this.setTitle(title);

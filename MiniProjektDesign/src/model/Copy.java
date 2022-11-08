@@ -3,8 +3,8 @@ package model;
 public class Copy {
 	private int serialNumber;
 	private String purchaseDate;
-	private String purchasePrice;
-	public Copy(int serialNumber, String purchaseDate, String purchasePrice) {
+	private double purchasePrice;
+	public Copy(int serialNumber, String purchaseDate, double purchasePrice) {
 		this.setSerialNumber(serialNumber);
 		this.setPurchaseDate(purchaseDate);
 		this.setPurchasePrice(purchasePrice);
@@ -21,10 +21,10 @@ public class Copy {
 	public void setPurchaseDate(String purchaseDate) {
 		this.purchaseDate = purchaseDate;
 	}
-	public String getPurchasePrice() {
+	public double getPurchasePrice() {
 		return purchasePrice;
 	}
-	public void setPurchasePrice(String purchasePrice) {
+	public void setPurchasePrice(double purchasePrice) {
 		this.purchasePrice = purchasePrice;
 	}
 }

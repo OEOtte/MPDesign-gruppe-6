@@ -15,9 +15,9 @@ public class LoanCtroller {
 	};
 
 	// Metode til at finde en "friend" ved hjælp af phone.
-	public void findPersonByPhone(int phone) {
+	public Person findPersonByPhone(int phone) {
 		PersonController pc = new PersonController();
-		pc.findByPhone(phone);
+		return pc.findByPhone(phone);
 
 	}
 
@@ -30,6 +30,7 @@ public class LoanCtroller {
 		// TODO mangler logik, for at henvende til getCopy metoden
 		Scanner scanner = new Scanner(System.in);
 		String input = scanner.nextLine().toLowerCase();
+		System.out.println("Please enter serial number:");
 		int serialNumber = Integer.parseInt(input);
 		getCopy(serialNumber);
 

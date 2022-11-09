@@ -1,5 +1,8 @@
 package tui;
-
+/**
+ * @author Gruppe 6
+ * @version 2022-11-09
+ */
 import static org.junit.jupiter.api.Assertions.*;
 import Controller.*;
 import model.*;

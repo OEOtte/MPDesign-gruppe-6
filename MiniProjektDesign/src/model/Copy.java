@@ -1,5 +1,8 @@
 package model;
-
+/**
+ * @author Gruppe 6
+ * @version 2022-11-09
+ */
 public class Copy {
 	private int serialNumber;
 	private String purchaseDate;

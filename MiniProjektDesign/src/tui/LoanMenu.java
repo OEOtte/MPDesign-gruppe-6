@@ -1,4 +1,8 @@
 package tui;
+/**
+ * @author Gruppe 6
+ * @version 2022-11-09
+ */
 import Controller.*;
 import model.*;
 import java.util.Scanner;

@@ -1,5 +1,8 @@
 package model;
-
+/**
+ * @author Gruppe 6
+ * @version 2022-11-09
+ */
 public class Loan {
 	private int loanNumber;
 	private String borrowDate;

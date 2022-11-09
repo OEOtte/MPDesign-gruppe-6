@@ -1,4 +1,8 @@
 package model;
+/**
+ * @author Gruppe 6
+ * @version 2022-11-09
+ */
 import java.util.ArrayList;
 
 public class LP {
@@ -7,7 +11,6 @@ public class LP {
 	private String artist;
 	private String publicationDate;
 	private ArrayList<Copy> copies;
-	// Add array/container for hver copy der findes
 	public LP(int barcode, String title, String artist, String publicationDate) {
 		this.setBarcode(barcode);
 		this.setTitle(title);

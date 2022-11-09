@@ -1,5 +1,8 @@
 package Controller;
-
+/**
+ * @author Gruppe 6
+ * @version 2022-11-09
+ */
 import java.util.Scanner;
 
 import model.Copy;

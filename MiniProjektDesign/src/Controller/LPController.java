@@ -1,4 +1,8 @@
 package Controller;
+/**
+ * @author Gruppe 6
+ * @version 2022-11-09
+ */
 import model.LoanContainer;
 import model.LPContainer;
 

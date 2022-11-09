@@ -1,5 +1,8 @@
 package model;
-
+/**
+ * @author Gruppe 6
+ * @version 2022-11-09
+ */
 import java.util.ArrayList;
 
 public class LoanContainer {

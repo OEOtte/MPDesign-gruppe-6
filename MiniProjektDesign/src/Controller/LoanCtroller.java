@@ -9,7 +9,6 @@ import model.Person;
 
 public class LoanCtroller {
 
-	private Person p;
 	private Loan aloan;
 
 	public LoanCtroller() {
@@ -18,7 +17,7 @@ public class LoanCtroller {
 	// Metode til at finde en "friend" ved hjælp af phone.
 	public void findPersonByPhone(int phone) {
 		PersonController pc = new PersonController();
-		p = pc.findByPhone(phone);
+		pc.findByPhone(phone);
 
 	}
 

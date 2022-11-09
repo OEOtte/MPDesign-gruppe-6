@@ -1,16 +1,19 @@
 package model;
+import java.util.ArrayList;
 
 public class LP {
 	private int barcode;
 	private String title;
 	private String artist;
 	private String publicationDate;
+	private ArrayList<Copy> copies;
 	// Add array/container for hver copy der findes
 	public LP(int barcode, String title, String artist, String publicationDate) {
 		this.setBarcode(barcode);
 		this.setTitle(title);
 		this.setArtist(artist);
 		this.setPublicationDate(publicationDate);
+		this.setCopies(new ArrayList<>());
 	}
 	public int getBarcode() {
 		return barcode;
@@ -35,5 +38,14 @@ public class LP {
 	}
 	public void setPublicationDate(String publicationDate) {
 		this.publicationDate = publicationDate;
+	}
+	public void addCopy(Copy copy) {
+		getCopies().add(copy);
+	}
+	public ArrayList<Copy> getCopies() {
+		return copies;
+	}
+	public void setCopies(ArrayList<Copy> copies) {
+		this.copies = copies;
 	}
 }

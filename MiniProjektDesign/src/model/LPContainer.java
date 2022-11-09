@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class LPContainer {
 	private static LPContainer instance;
 	private ArrayList<LP> lps;
+	private LP lp;
 
 	public static LPContainer getInstance() {
 		if(instance == null) {
@@ -21,5 +22,10 @@ public class LPContainer {
 
 	public ArrayList<LP> getCurrentLPs() {
 		return lps;
+	}
+	
+
+	public ArrayList<Copy> searchLPCopies() {
+		return lp.getCopies();
 	}
 }

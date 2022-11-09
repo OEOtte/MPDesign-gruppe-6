@@ -6,6 +6,7 @@ public class LPContainer {
 	private static LPContainer instance;
 	private ArrayList<LP> lps;
 	private LP lp;
+	private Copy copy;
 
 	public static LPContainer getInstance() {
 		if(instance == null) {
@@ -26,6 +27,16 @@ public class LPContainer {
 	
 
 	public ArrayList<Copy> searchLPCopies() {
-		return lp.getCopies();
+		ArrayList<Copy> cc = new ArrayList<>(lp.getCopies());
+		return cc;
 	}
+	
+	public int checkCopySerial() {
+		int res = 0;
+		
+		res = copy.getSerialNumber();
+		
+		return res;
+	}
+	
 }

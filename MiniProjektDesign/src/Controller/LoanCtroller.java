@@ -29,19 +29,18 @@ public class LoanCtroller {
 
 		// TODO mangler logik, for at henvende til getCopy metoden
 		Scanner scanner = new Scanner(System.in);
-		String input = scanner.nextLine().toLowerCase();
 		System.out.println("Please enter serial number:");
-		int serialNumber = Integer.parseInt(input);
-		getCopy(serialNumber);
-
+		String input = scanner.nextLine().toLowerCase();
+		int serialNumber = (int)Integer.parseInt(input);
+		Copy c = getCopy(serialNumber);
+		aloan.setCopy(c);
 		LoanContainer.getInstance().addLoan(aloan);
 		return aloan;
 	}
 	//Method used to stick our copy to "aloan".
-	private void getCopy(int serialNumber) {
+	public Copy getCopy(int serialNumber) {
 		LPController lpc = new LPController();
-		Copy copy = lpc.findCopy(serialNumber);
-		aloan.setCopy(copy);
+		return lpc.findCopy(serialNumber);
 		// LoanContainer.getInstance().addLoan(aloan);
 	}
 

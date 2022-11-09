@@ -27,14 +27,11 @@ public class LPContainer {
 	
 
 	public Copy searchLPCopies(int serialNumber) {
-		ArrayList<Copy> copies = new ArrayList<>(lp.getCopies());
-		Copy copy = null;
-		for (int i = 0; i < copies.size(); i++) {
-			if(copies.get(i).getSerialNumber() == serialNumber) {
-				copy = copies.get(i);
-			}
+		Copy res = null;
+		for (int i = 0; i < lps.size(); i++) {
+			res = lps.get(i).getCopyBySN(serialNumber);
 		}
-		return copy;
+		return res;
 	}
 	
 	public int checkCopySerial() {

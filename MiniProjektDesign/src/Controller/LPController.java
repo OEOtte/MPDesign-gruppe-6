@@ -12,11 +12,8 @@ public class LPController {
 	
 	public Copy findCopy(int serialNumber) {
 		LPContainer lpc = LPContainer.getInstance();
-		ArrayList<LP> lps = lpc.getCurrentLPs();
 		Copy res = null;
-		for (int i = 0; i < lps.size(); i++) {
-			lps.get(i).searchLPCopies(serialNumber);
-		}
+		res = lpc.searchLPCopies(serialNumber);
 		return res;
 	}
 }

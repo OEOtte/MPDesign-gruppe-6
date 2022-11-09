@@ -11,18 +11,23 @@ class ControllTester {
 	private Copy copy;
 	private LoanCtroller LC;
 	private Loan aLoan;
+	private LP lp;
+	private LPContainer lpc;
 	
 	@Test
 	void test() {
 		person = new Person("Philip", "Aalborg", "Sofiensdahlvej 123", 12345678, 9200);
+		lp = new LP(99999, "Omega", "Oliver", "9.nov");
 		copy = new Copy(4312, "05/01/2022", 500);
+		lp.addCopy(copy);
 		LC = new LoanCtroller();
+		lpc = LPContainer.getInstance();
+		lpc.addLP(lp);
 		
 		aLoan = LC.createLoan(123, "08/11/2022", "3 weeks", true, "29/11/2022", person);
 		
 		assertTrue(aLoan.getPerson() == person);
 		
-		// TODO tilføj logikken til at dette retunerer true
 		assertTrue(aLoan.getCopy() == copy);
 	}
 

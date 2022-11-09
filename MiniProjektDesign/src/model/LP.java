@@ -48,4 +48,13 @@ public class LP {
 	public void setCopies(ArrayList<Copy> copies) {
 		this.copies = copies;
 	}
+	public Copy getCopyBySN(int serialNumber) {
+		Copy copy = null;
+		for (int i = 0; i < copies.size() && copy == null; i++) {
+			if(copies.get(i).getSerialNumber() == serialNumber) {
+				copy = copies.get(i);
+			}
+		}
+		return copy;
+	}
 }

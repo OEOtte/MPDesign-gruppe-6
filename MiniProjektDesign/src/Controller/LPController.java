@@ -1,23 +1,22 @@
 package Controller;
 import model.LoanContainer;
 import model.LPContainer;
+
+import java.util.ArrayList;
+
 import model.Copy;
+import model.LP;
 //Actually CBT
 public class LPController {
 	
-	private LPContainer lpc;
-	
 	
 	public Copy findCopy(int serialNumber) {
+		LPContainer lpc = LPContainer.getInstance();
+		ArrayList<LP> lps = lpc.getCurrentLPs();
 		Copy res = null;
-		lpc = LPContainer.getInstance();
-		for(int i = 0; i < lpc.getCurrentLPs().size(); i++) {
-			for(int j = 0; j < lpc.searchLPCopies().size() ; j++) {
-				if(serialNumber == lpc.checkCopySerial()) {
-					res = lpc.searchLPCopies();
-				}
-			}
+		for (int i = 0; i < lps.size(); i++) {
+			lps.get(i).searchLPCopies(serialNumber);
 		}
-		
+		return res;
 	}
 }

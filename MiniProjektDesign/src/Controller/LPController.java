@@ -10,7 +10,6 @@ import java.util.ArrayList;
 
 import model.Copy;
 import model.LP;
-
 public class LPController {
 	
 	

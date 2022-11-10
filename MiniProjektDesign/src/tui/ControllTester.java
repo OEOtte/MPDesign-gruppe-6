@@ -41,11 +41,11 @@ class ControllTester {
 		assertTrue(person.getPhone() == aLoan.getPerson().getPhone());
 		assertTrue(person.getName() == aLoan.getPerson().getName());
 	}
-	//@Test
+	@Test
 	void PersonContainer() {
 		assertTrue(PC.getCurrentPeople().contains(person));
 	}
-	//@Test
+	@Test
 	void LoanCopyInfo() {
 		assertTrue(aLoan.getCopy().getSerialNumber() == copy.getSerialNumber());
 	}

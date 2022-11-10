@@ -33,17 +33,15 @@ public class LoanContainer {
 		}
 		if (checkForDuplicates(loan)) return;
 		
-		if (loan != loans.get(loans.size()-1)) {
 			num++;
 			setLoanNumber(loan);
 			loans.add(loan);
-		}
 	}
 	
 	public boolean checkForDuplicates(Loan loan) {
 		boolean duplicate = false;
 		for (int i = 0; i < loans.size() && !duplicate; i++) {
-			if (loan == loans.get(i)) {
+			if (loan.getCopy() == loans.get(i).getCopy()) {
 				System.out.println("Can't add the same loan duplicates");
 				duplicate = true;
 			}

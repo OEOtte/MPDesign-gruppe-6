@@ -14,7 +14,6 @@ public class LoanCtroller {
 
 	private Loan aloan;
 	private Scanner scanner = new Scanner(System.in);
-	private int loanNumber = 0;
 
 	public LoanCtroller() {}
 	
@@ -25,7 +24,7 @@ public class LoanCtroller {
 		
 		Person person = findPersonByPhone();
 		aloan.setPerson(person);
-		System.out.println("    - Account added -");
+		System.out.println("    - Person added -");
 		
 		Copy c = getCopy();
 		aloan.setCopy(c);

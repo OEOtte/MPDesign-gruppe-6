@@ -9,42 +9,52 @@ import model.Copy;
 import model.Loan;
 import model.LoanContainer;
 import model.Person;
-
+import java.time.LocalDate; 
 public class LoanCtroller {
 
 	private Loan aloan;
+	private Scanner scanner = new Scanner(System.in);
+	private int loanNumber = 0;
 
-	public LoanCtroller() {
-	};
-
-	// Metode til at finde en "friend" ved hjælp af phone.
-	public Person findPersonByPhone(int phone) {
-		PersonController pc = new PersonController();
-		return pc.findByPhone(phone);
-
-	}
-
-	//Method for creating a loan with use of Person and Copy.
-	public Loan createLoan(int loanNumber, String borrowDate, String period, boolean state, 
-			String returnDate, Person person) {
-		aloan = new Loan(loanNumber, borrowDate, period, state, returnDate);
+	public LoanCtroller() {}
+	
+	public Loan createLoan(int period) {
+		aloan = new Loan(period);
+		aloan.setState(true);
+		System.out.println("***   Loan created   ***");
+		
+		Person person = findPersonByPhone();
 		aloan.setPerson(person);
-
-		// TODO mangler logik, for at henvende til getCopy metoden
-		Scanner scanner = new Scanner(System.in);
-		System.out.println("Please enter serial number:");
-		String input = scanner.nextLine().toLowerCase();
-		int serialNumber = (int)Integer.parseInt(input);
-		Copy c = getCopy(serialNumber);
+		System.out.println("    - Account added -");
+		
+		Copy c = getCopy();
 		aloan.setCopy(c);
+		System.out.println("      - Copy added -");
+		
 		LoanContainer.getInstance().addLoan(aloan);
+		System.out.println("***   Loan registered   ***");
 		return aloan;
 	}
-	//Method used to stick our copy to "aloan".
-	public Copy getCopy(int serialNumber) {
+	
+	public Person findPersonByPhone() {
+		System.out.println("  Enter your phone number");
+		int phoneNr = getIntegerFromUser(scanner);
+		PersonController pc = new PersonController();
+		return pc.findByPhone(phoneNr);
+	}
+	
+	public Copy getCopy() {
+		System.out.println("  Enter the serial number   ");
+		int serialNumber = getIntegerFromUser(scanner);
 		LPController lpc = new LPController();
 		return lpc.findCopy(serialNumber);
-		// LoanContainer.getInstance().addLoan(aloan);
 	}
-
+	
+	private int getIntegerFromUser(Scanner input) {
+		while (!input.hasNextInt()) {
+			System.out.println("Input can only contain numbers - try again");
+			input.nextLine();
+		}
+		return input.nextInt();
+	}
 }

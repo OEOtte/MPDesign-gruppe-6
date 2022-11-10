@@ -3,23 +3,23 @@ package model;
  * @author Gruppe 6
  * @version 2022-11-09
  */
+import java.time.LocalDate;
 public class Loan {
 	private int loanNumber;
-	private String borrowDate;
-	private String period;
+	private LocalDate borrowDate;
+	private int period;
 	private boolean state;
-	private String returnDate;
+	private LocalDate returnDate;
 	private Person person;
 	private Copy copy;
 	
-	public Loan(int loanNumber, String borrowDate, String period, boolean state, String returnDate) {
-		this.setLoanNumber(loanNumber);
-		this.setBorrowDate(borrowDate);
+	public Loan(int period) {
 		this.setPeriod(period);
-		this.setState(state);
-		this.setReturnDate(returnDate);
+		borrowDate = LocalDate.now();
+		returnDate = borrowDate.plusDays(period);
 		person = null;
 		copy = null;
+		state = false;
 	}
 	public int getLoanNumber() {
 		return loanNumber;
@@ -28,15 +28,16 @@ public class Loan {
 		this.loanNumber = loanNumber;
 	}
 	public String getBorrowDate() {
-		return borrowDate;
+		String res = "" + borrowDate;
+		return res;
 	}
-	public void setBorrowDate(String borrowDate) {
+	public void setBorrowDate(LocalDate borrowDate) {
 		this.borrowDate = borrowDate;
 	}
-	public String getPeriod() {
+	public int getPeriod() {
 		return period;
 	}
-	public void setPeriod(String period) {
+	public void setPeriod(int period) {
 		this.period = period;
 	}
 	public boolean isState() {
@@ -45,10 +46,10 @@ public class Loan {
 	public void setState(boolean state) {
 		this.state = state;
 	}
-	public String getReturnDate() {
+	public LocalDate getReturnDate() {
 		return returnDate;
 	}
-	public void setReturnDate(String returnDate) {
+	public void setReturnDate(LocalDate returnDate) {
 		this.returnDate = returnDate;
 	}
 	public Person getPerson() {

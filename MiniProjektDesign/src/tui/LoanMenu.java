@@ -50,14 +50,10 @@ public class LoanMenu {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Please enter a new Loan number:");
 		int loanNr = scanner.nextInt();
-		System.out.println("\nPlease enter the borrow date: ");
-		String borrowDate = scanner.nextLine();
 		System.out.println("\nPlease enter duration of the loan: ");
-		String period = scanner.nextLine();
-		System.out.println("\nPlease enter the return date: ");
-		String returnDate = scanner.nextLine();
+		int period = scanner.nextInt();
 		System.out.println();
-		lc.createLoan(loanNr, borrowDate, period, true, returnDate, person);
+		lc.createLoan(period);
 		
 	}
 

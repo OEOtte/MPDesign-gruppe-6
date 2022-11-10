@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 import model.Copy;
 import model.LP;
-//Actually CBT
+
 public class LPController {
 	
 	

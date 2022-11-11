@@ -5,6 +5,10 @@ package tui;
  */
 import java.util.Scanner;
 
+import Controller.LoanCtroller;
+import model.*;
+import Controller.*;
+
 
 public class Tui {
 
@@ -48,7 +52,7 @@ public class Tui {
                   loanMenu.start();
                   break;
                 case 9:
-                  System.out.println("Denne er ikke implementeret endnu");
+                  writeData();
                   break;
                 case 0:
                   System.out.println("Tak for denne gang.");
@@ -60,6 +64,32 @@ public class Tui {
             }
         }
     }
+	private void writeData() {
+		Person person = new Person("Philip", "Aalborg", "Sofiensdahlvej 123", 9200, 12345678);
+		LP lp = new LP(99999, "Omega", "Oliver", "9.nov");
+		Copy copy = new Copy(1234, "05/01/2022", 500);
+		PersonContainer PC = PersonContainer.getInstance();
+		LPContainer lpc = LPContainer.getInstance();
+		lp.addCopy(copy);
+		lpc.addLP(lp);
+		PC.addPerson(person);
+		System.out.println("***   User Data   ***");
+		System.out.println("   Name: " + person.getName());
+		System.out.println("   City: " + person.getCity());
+		System.out.println("   Address: " + person.getAddress());
+		System.out.println("   Postal Code: " + person.getPostalCode());
+		System.out.println("   Phone Nr: " + person.getPhone());
+		System.out.println();
+		System.out.println("***   Copy Data   ***");
+		System.out.println("   Serial Number: " + copy.getSerialNumber());
+		System.out.println();
+		System.out.println("***   LP Data   ***");
+		System.out.println("   Artist: " + lp.getArtist());
+		System.out.println("   Title: " + lp.getTitle());
+		System.out.println("   Publication Date: " + lp.getPublicationDate());
+		System.out.println("   Barcode: " + lp.getBarcode());
+		System.out.println();
+	}
 	/**
 	 * Setup a scanner that scans user inputs, and then return given input
 	 * back into the mainMenu method

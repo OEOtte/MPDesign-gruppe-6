@@ -8,20 +8,8 @@ import model.*;
 import java.util.Scanner;
 
 public class LoanMenu {
-	private LoanCtroller lc;
-	private Person person;
-	private Copy copy;
-	private LP lp;
-	private LPContainer lpc;
-	public LoanMenu() {
-		lc = new LoanCtroller();
-		person = new Person("Philip", "Aalborg", "Sofiensdahlvej 123", 12345678, 9200);
-		copy = new Copy(4312, "05/01/2022", 500);
-		lp = new LP(99999, "Omega", "Oliver", "9.nov");		
-		lp.addCopy(copy);
-		lpc = LPContainer.getInstance();
-		lpc.addLP(lp);
-	}
+	private LoanCtroller lc = new LoanCtroller();
+	public LoanMenu() {}
 
 	public void start() {
 		loanMenu();
@@ -34,7 +22,6 @@ public class LoanMenu {
 			switch (choice) {
 			case 1:
 				createNewLoan();
-				// System.out.println(" Denne er ikke implementeret endnu!");
 				break;
 			case 0:
 				running = false;
@@ -48,13 +35,20 @@ public class LoanMenu {
 
 	private void createNewLoan() {
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("Please enter a new Loan number:");
-		int loanNr = scanner.nextInt();
-		System.out.println("\nPlease enter duration of the loan: ");
+		System.out.println("Please amount of days you want to loan for");
 		int period = scanner.nextInt();
 		System.out.println();
-		lc.createLoan(period);
-		
+		Loan loan = lc.createLoan(period);
+		printLoanInfo(loan);
+	}
+
+	private void printLoanInfo(Loan loan) {
+		System.out.println();
+		System.out.println("***   Loan Info   ***");
+		System.out.println("   Loaner: " + loan.getPerson().getName());
+		System.out.println("   Borrow Date: " + loan.getBorrowDate());
+		System.out.println("   Return Date: " + loan.getReturnDate());
+		System.out.println();
 	}
 
 	private int writeLoanMenu() {

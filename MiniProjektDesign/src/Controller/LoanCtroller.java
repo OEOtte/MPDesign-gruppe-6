@@ -19,7 +19,6 @@ public class LoanCtroller {
 	
 	public Loan createLoan(int period) {
 		aloan = new Loan(period);
-		aloan.setState(true);
 		System.out.println("***   Loan created   ***");
 		
 		Person person = findPersonByPhone();
@@ -31,6 +30,7 @@ public class LoanCtroller {
 		System.out.println("      - Copy added -");
 		
 		LoanContainer.getInstance().addLoan(aloan);
+		aloan.setState(true);
 		System.out.println("***   Loan registered   ***");
 		return aloan;
 	}

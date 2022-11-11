@@ -49,6 +49,11 @@ public class LoanMenu {
 		System.out.println("   Borrow Date: " + loan.getBorrowDate());
 		System.out.println("   Return Date: " + loan.getReturnDate());
 		System.out.println();
+		System.out.println("***   Copy Info   ***");
+		System.out.println("   Title: " + loan.getCopy().getLPofCopy().getTitle());
+		System.out.println("   Artist: " + loan.getCopy().getLPofCopy().getArtist());
+		System.out.println("   Barcode: " + loan.getCopy().getLPofCopy().getBarcode());
+		System.out.println();
 	}
 
 	private int writeLoanMenu() {

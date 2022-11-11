@@ -30,4 +30,16 @@ public class Copy {
 	public void setPurchasePrice(double purchasePrice) {
 		this.purchasePrice = purchasePrice;
 	}
+	public LP getLPofCopy() {
+		LP res = null;
+		LPContainer lpc = LPContainer.getInstance();
+		boolean found = false;
+		for (int i = 0; i < lpc.getCurrentLPs().size() && !found; i++) {
+			if (lpc.getCurrentLPs().get(i).getCopies().get(i).getSerialNumber() == serialNumber) {
+				res = lpc.getCurrentLPs().get(i);
+				found = true;
+			}
+		}
+		return res;
+	}
 }

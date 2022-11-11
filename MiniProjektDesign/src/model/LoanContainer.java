@@ -25,12 +25,6 @@ public class LoanContainer {
 			System.out.println("Can't add null as a loan");
 			return;
 		}
-		if (loans.size() == 0) {
-			num++;
-			setLoanNumber(loan);
-			loans.add(loan);
-			return;
-		}
 		if (checkForDuplicates(loan)) return;
 		
 			num++;
